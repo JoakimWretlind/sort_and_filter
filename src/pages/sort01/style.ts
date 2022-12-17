@@ -25,36 +25,3 @@ export const Row = styled.div`
   align-items: center;
   width: min-content;
 `;
-
-export const Table = styled.table`
-  height: 100%;
-  width: 100%;
-  max-width: 80rem;
-  background-color: ${(props) => props.theme.gray};
-`;
-
-export const Thead = styled.thead`
-  font-weight: 900;
-  font-size: 1.6rem;
-`;
-
-export const TR = styled.tr`
-  background-color: ${(props) => props.theme.lightGray};
-  &:nth-child(odd) {
-    background-color: ${(props) => props.theme.white};
-  }
-`;
-
-export const TdHeader = styled.td`
-  padding: 0.3rem 0.3rem 0rem 0.6rem;
-  white-space: nowrap;
-  font-size: 1.2rem;
-  font-weight: 500;
-`;
-
-export const TD = styled.td`
-  padding: 0.6rem 0.3rem 0.6rem 0.6rem;
-  white-space: nowrap;
-  font-size: 1.2rem;
-  font-weight: 500;
-`;

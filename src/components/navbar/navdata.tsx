@@ -6,7 +6,7 @@ export const navData = [
   },
   {
     id: 2,
-    title: "search01",
-    path: "/search01",
+    title: "filter",
+    path: "/filter01",
   },
 ];

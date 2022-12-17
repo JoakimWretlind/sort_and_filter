@@ -22,6 +22,42 @@ export const H1 = styled.h1`
   margin-bottom: 1rem;
 `;
 
-{/* <OrederIcons onClick={() => setSorted(!sorted)}>
-                      {sorted ? <FaCaretUp /> : <FaCaretDown />}
-                    </OrederIcons> */}
+export const Table = styled.table`
+  height: 100%;
+  width: 100%;
+  max-width: 80rem;
+  background-color: ${(props) => props.theme.gray};
+`;
+
+export const Thead = styled.thead`
+  font-weight: 900;
+  font-size: 1.6rem;
+`;
+
+export const TR = styled.tr`
+  background-color: ${(props) => props.theme.lightGray};
+  &:nth-child(odd) {
+    background-color: ${(props) => props.theme.white};
+  }
+`;
+
+export const TdHeader = styled.td`
+  padding: 0.3rem 0.3rem 0rem 0.6rem;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: 600;
+`;
+
+export const TdHeaderFilter = styled.td`
+  padding: 1.2rem 0rem 0.9rem 0.9rem;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: 600;
+`;
+
+export const TD = styled.td`
+  padding: 0.6rem 0.3rem 0.6rem 0.6rem;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: 500;
+`;

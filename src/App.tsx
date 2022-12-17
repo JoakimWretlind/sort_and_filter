@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { Navbar } from "./components/navbar";
-import { Search01, Sort01 } from "./pages";
+import { Filter01, Sort01 } from "./pages";
 import { GlobalStyle, searchTheme } from "./styles/globalStyle";
 import { Routes, Route } from "react-router-dom";
 
@@ -12,7 +12,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Sort01 data={[]} />} />
-          <Route path="/search01" element={<Search01 />} />
+          <Route path="/filter01" element={<Filter01 />} />
         </Routes>
       </ThemeProvider>
     </>

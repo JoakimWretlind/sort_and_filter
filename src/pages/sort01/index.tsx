@@ -1,8 +1,17 @@
-import { OrederIcons, Row, Table, TD, Thead, TR, TdHeader } from "./style";
-import { H1, PageWrapper } from "../../styles/commonStyles";
+import { OrederIcons, Row } from "./style";
+import {
+  H1,
+  PageWrapper,
+  Table,
+  TD,
+  Thead,
+  TR,
+  TdHeader,
+} from "../../styles/commonStyles";
 import { data } from "../../data/data.json";
-import { FaCaretDown, FaCaretUp } from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
 import { MouseEventHandler, useCallback, useState } from "react";
+import { headers } from "../../utilities/headers";
 
 // create type for the data that we recieve
 type Data = typeof data;
@@ -59,6 +68,7 @@ const Sort01: React.FC<{ data: Data }> = () => {
 
   // The headers for the table
   // to make this work, we have to give a type to the key and the label
+  /*
   const headers: { key: SortKeys; label: string }[] = [
     { key: "id", label: "ID" },
     { key: "first_name", label: "First name" },
@@ -67,6 +77,7 @@ const Sort01: React.FC<{ data: Data }> = () => {
     { key: "gender", label: "Gender" },
     { key: "phone", label: "Phone" },
   ];
+  */
 
   // The sort-function
   // useCallback => If wa pass in the same properties we want memoize
@@ -116,7 +127,6 @@ const Sort01: React.FC<{ data: Data }> = () => {
           <tr>
             {headers.map((header) => {
               const { key, label } = header;
-
               return (
                 <TdHeader key={key}>
                   <Row>
