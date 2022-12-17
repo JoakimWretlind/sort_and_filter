@@ -11,7 +11,7 @@ function App() {
       <ThemeProvider theme={searchTheme}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Sort01 />} />
+          <Route path="/" element={<Sort01 data={[]} />} />
           <Route path="/search01" element={<Search01 />} />
         </Routes>
       </ThemeProvider>
