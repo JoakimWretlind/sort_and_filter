@@ -1,4 +1,4 @@
-import { OrederIcons, Row } from "./style";
+import { Row } from "./style";
 import {
   H1,
   PageWrapper,
@@ -9,9 +9,9 @@ import {
   TdHeader,
 } from "../../styles/commonStyles";
 import { data } from "../../data/data.json";
-import { FaCaretDown } from "react-icons/fa";
-import { MouseEventHandler, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { headers } from "../../utilities/headers";
+import { SortButton } from "./sortBtn";
 
 // create type for the data that we recieve
 type Data = typeof data;
@@ -22,18 +22,6 @@ type SortKeys = keyof Data[0];
 
 // SortOrder will be ascending or descending
 type SortOrder = "ascn" | "desc";
-
-//create types for each person
-/*
-type person = {
-  id: number;
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone: string;
-  gender: string;
-};
-*/
 
 function sortData({
   tableData,
@@ -66,19 +54,6 @@ const Sort01: React.FC<{ data: Data }> = () => {
   // sortOrder = reffers to the ascn or desc in SortOrder -> use the SortOrder type
   const [sortOrder, setSortOrder] = useState<SortOrder>("ascn");
 
-  // The headers for the table
-  // to make this work, we have to give a type to the key and the label
-  /*
-  const headers: { key: SortKeys; label: string }[] = [
-    { key: "id", label: "ID" },
-    { key: "first_name", label: "First name" },
-    { key: "last_name", label: "Last name" },
-    { key: "email", label: "Email" },
-    { key: "gender", label: "Gender" },
-    { key: "phone", label: "Phone" },
-  ];
-  */
-
   // The sort-function
   // useCallback => If wa pass in the same properties we want memoize
   // and therefore quickly return the result of our sorting function
@@ -91,32 +66,6 @@ const Sort01: React.FC<{ data: Data }> = () => {
     setSortOrder(sortOrder === "ascn" ? "desc" : "ascn");
     // which key is pressed for the correct
     setSortKey(key);
-  }
-
-  // Button to sort the Data
-  function SortButton({
-    sortOrder,
-    columnKey,
-    sortKey,
-    onClick,
-  }: {
-    sortOrder: SortOrder;
-    columnKey: SortKeys;
-    sortKey: SortKeys;
-    onClick: MouseEventHandler<HTMLButtonElement>;
-  }) {
-    return (
-      <OrederIcons
-        onClick={onClick}
-        className={`${
-          sortKey === columnKey && sortOrder === "desc"
-            ? "sort-button sort-reverse"
-            : "sort-button"
-        }`}
-      >
-        <FaCaretDown />
-      </OrederIcons>
-    );
   }
 
   return (
@@ -170,5 +119,3 @@ const Sort01: React.FC<{ data: Data }> = () => {
 };
 
 export default Sort01;
-
-// Make ascn or desc as booleans

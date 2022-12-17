@@ -1,7 +1,7 @@
 export const navData = [
   {
     id: 1,
-    title: "sort01",
+    title: "sort",
     path: "/",
   },
   {
